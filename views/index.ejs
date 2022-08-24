@@ -1,0 +1,26 @@
+<%-include("./partials/header.ejs")%>
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>iBrick</h1>
+    <h2>Lego Database</h2>
+    <ul id="lego">
+      <li>
+        <a href="/">Home</a>
+      </li>
+        <% lego.forEach(lego =>{%>
+          <a href="/lego/<%=lego.id%>"><%=lego.name%></a>
+          <img src="<%=lego.img%>">
+
+        %>
+
+        
+                  
+                  
+              
+            
+            <% })%>
+            <a href="/lego/new">Add new set</a>
+    </ul>
+</body>
+</html>
