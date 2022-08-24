@@ -3,7 +3,7 @@ require("dotenv").config();
 //External Modules
 const express = require("express");
 const methodOverride = require("method-override");
-const PORT = 3000;
+//const PORT = 3000;
 // const session = require("express-session");
 //Internal Modules
 // const mainCTRL = require("./controllers/legoController.js");
@@ -11,6 +11,7 @@ const PORT = 3000;
 //instance Modules
 const app = express();
 
+const PORT = process.env.PORT;
 //Mongoose setup
 const mongoose = require("mongoose");
 const Lego = require("./models/Lego");
