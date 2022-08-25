@@ -54,4 +54,4 @@ router.get("/signout", (req, res) => {
   res.redirect("/");
 });
 
-module.exports;
+module.exports = router;

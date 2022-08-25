@@ -1,0 +1,25 @@
+
+<%-include("./partials/header.ejs")%>
+<title>Edit Lego Page</title>
+</head>
+<body>
+    <h1>Edit your set</h1>
+    <form action="/lego/<%= lego.id %>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%=lego.name%>"/>
+        Description: <input type="text" name="description" value="<%=lego.description %>"/>
+        Pieces: <input type="number" name="pieces" value="<%=lego.pieces %>"/>
+        Image: <input type="text" name="img" value="<%=lego.img %>"/>
+        Instructions: <input type="text" name="Instructions" value="<%=lego.instructions %>"/>
+        Value: <input type="number" name="value" value="<%=lego.value %>"/>
+        QTY: <input type="number" name="qty" value="<%=lego.qty %>"/>
+        Is set retired: 
+        <input type="checkbox" name="retired"
+            <% if(lego.retired === true) { %>
+                checked
+            <% } %>
+        />
+        <br>
+        <input type="submit" name="" value="Submit Changes"/>
+    </form>
+</body>
+</html>

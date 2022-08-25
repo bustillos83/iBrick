@@ -22,9 +22,9 @@ const authRequired = (req, res, next) => {
 
 // //INDEX
 router.get("/", async (req, res) => {
-  console.log("before");
+  //console.log("before");
   let lego = await Lego.find({});
-  console.log("lego", lego);
+  //console.log("lego", lego);
   res.render("index.ejs", { lego });
 });
 
@@ -56,6 +56,7 @@ router.post("/", (req, res) => {
   } else {
     req.body.retired = false;
   }
+  console.log(req.body);
   Lego.create(req.body, (error, createLego) => {
     if (error) {
       console.log("error", error);
