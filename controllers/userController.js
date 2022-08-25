@@ -24,3 +24,34 @@ router.post("/register", (req, res) => {
     }
   });
 });
+
+router.get("/sigin", (req, res) => {
+  res.render("user/signin.ejs");
+});
+
+router.post("sigin", (req, res) => {
+  User.findOne({ username: req.body.username }, (err, foundUser) => {
+    if (foundUser) {
+      const validLogin = bcrypt.compareSync(
+        req.body.password,
+        foundUser.password
+      );
+      if (validLogin) {
+        req.session.currentUser = foundUser;
+        res.redirect("/");
+      } else {
+        res.send("invalid username or password");
+      }
+    } else {
+      res.send("invalid username or password");
+    }
+  });
+});
+
+//DESTROY SESSION ROUTE
+router.get("/signout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
+
+module.exports;
