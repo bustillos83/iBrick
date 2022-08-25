@@ -4,8 +4,6 @@ const app = express();
 
 const methodOverride = require("method-override");
 const session = require("express-session");
-//Internal Modules
-// const mainCTRL = require("./controllers/legoController.js");
 
 //PORT
 const PORT = process.env.PORT;
