@@ -19,17 +19,17 @@ router.post("/register", (req, res) => {
     } else {
       User.create(req.body, (err, createdUser) => {
         req.session.currentUser = createdUser;
-        res.redirect("/lego");
+        res.redirect("/");
       });
     }
   });
 });
 
-router.get("/sigin", (req, res) => {
-  res.render("user/signin.ejs");
+router.get("/signin", (req, res) => {
+  res.render("users/signin.ejs");
 });
 
-router.post("sigin", (req, res) => {
+router.post("/signin", (req, res) => {
   User.findOne({ username: req.body.username }, (err, foundUser) => {
     if (foundUser) {
       const validLogin = bcrypt.compareSync(
@@ -38,7 +38,7 @@ router.post("sigin", (req, res) => {
       );
       if (validLogin) {
         req.session.currentUser = foundUser;
-        res.redirect("/");
+        res.redirect("/lego");
       } else {
         res.send("invalid username or password");
       }
