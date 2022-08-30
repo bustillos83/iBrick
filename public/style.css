@@ -1,17 +1,87 @@
 body {
     background-image: url("https://i.imgur.com/3M9URXN.jpg");
+    position: static;
+    margin-left: auto;
+   margin-right: auto;
+   width: 50%;
 }
 
+
+.btn-responsive {
+    /* matches 'btn-md' */
+    padding: 10px 16px;
+    position: absolute;
+    margin-top: -350px;
+    margin-left: 320px;
+    /* font-size: 45px;
+    line-height: 1.3333333;
+    border-radius: 6px; */
+
+  }
+
+  @media (max-width:760px) {
+    /* matches 'btn-xs' */
+    .btn-responsive {
+      padding: 1px 5px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 5px;
+    }
+  }
 
 #bg-image{
     display: block;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto; 
-    max-width: 90%;
-    height: auto;
- 
+    margin-top: 100px;
+    /* max-width: 90%; */
+    position:static;
+    width: 50%;
+    height: 800px;
+    margin-left:-250px;
+    margin-right: auto;
+    min-width:fit-content;
     border-radius: 50px;
     border: 10px solid rgb(237, 146, 100)
 }
+.welcome{
 
+  position:absolute;
+  text-align: center;
+  margin-top: 250px;
+  margin-left:300px;
+  color:darkred;
+
+  }
+
+  .intro{
+
+    position: absolute;
+    text-align: center;
+    margin-top: 300px;
+    margin-left: 280px;
+    font-size: larger;
+
+    }
+
+.contact{
+    position:sticky;
+
+    margin-top: -150px;
+    margin-left: 380px;
+    font-size: larger;
+}
+
+.questions{
+    margin-left:-20px;
+}
+
+.register{
+    position:static;
+    margin-top: -550px;
+    margin-left:  90px;
+   
+
+}
+.lead{
+    size: 5px;
+
+}

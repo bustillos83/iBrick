@@ -14,39 +14,25 @@
 <body>
 
 
-    <!-- <h1>Register A New User</h1>
-    <form action="/users/register" method="POST">
-      <fieldset>
-        <label for="username">Username:</label>
-        <input type="text" name="username">
-      </fieldset>
-      <fieldset>
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-      </fieldset>
-      <input type="submit" value="Sign Up">
-    </form>
-  </body>
-</html> -->
-
 <div><img src="https://i.imgur.com/5MGamyj.jpg" id="bg-image"></div>
 
-<div class="container">
-  <div class="text-center">
+<div class="register">
       <h1>Register</h1>
       <p class="lead">Register to iBrick</p>
-  </div>
 </div>
-<div class="row justify-content-center my-5">
-  <div class="col-lg-6">
+<div class="container-fluid">
+<div class="row my-5">
+  <div class="col-lg-4">
     <form action="/users/register" method="POST">
           <label for="username" class="username-label">Username:</label>
           <input type="text" name="username" placeholder="create a username" class="form-control"/>
           <label for="password" class="password-label">Password:</label>
-          <input type="password" name="password" placeholder="create a password" class="form-control"/>
           
+          <input type="password" name="password" placeholder="create a password" class="form-control"/><small id="passwordHelpInLine" class="text-muted">Must be 8-20 characters long.</small>
+          <br/>
           <input type="submit" value="Sign Up" class="form-control"/>
       </form>
+    </div>
   </div>
 </div>
 <%- include('../partials/footer.ejs')%>

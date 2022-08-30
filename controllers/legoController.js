@@ -33,6 +33,11 @@ router.get("/new", (req, res) => {
   res.render("new.ejs");
 });
 
+//CONTACT
+router.get("/contact", (req, res) => {
+  res.render("contact.ejs");
+});
+
 //SHOW
 router.get("/:id", async (req, res) => {
   const lego = await Lego.findById(req.params.id);

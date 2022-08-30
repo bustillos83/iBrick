@@ -1,5 +1,10 @@
 <%- include('../partials/header.ejs') %>
+
+
+<div><img src="https://i.imgur.com/5MGamyj.jpg" id="bg-image"></div>
     <h1>Sign In</h1>
+    <div class="row my-5">
+      <div class="col-lg-4">
     <form action="/users/signin" method="POST">
       <fieldset>
         <label for="username">Username:</label>
@@ -11,5 +16,7 @@
       </fieldset>
       <input type="submit" value="Sign In">
     </form>
+    </div>
+  </div>
   </body>
 </html>
