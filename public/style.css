@@ -146,6 +146,12 @@ body {
     max-width: 80%;
     /* margin-left:  auto; */
 }
+.edit-form{
+    position:absolute;
+    margin-top: -650px;
+    /* margin-left:  80%; */
+    max-width: 80%;
+}
 
 .button2{
     position: absolute;
@@ -165,11 +171,7 @@ body {
 }
 
 
-.edit-form{
-    position:static;
-    margin-top: -750px;
-    margin-left:  -80px;
-}
+
 
 .img-thumbnail{
     max-width: 20%;
