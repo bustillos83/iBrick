@@ -3,15 +3,19 @@
 <title>Edit Lego Page</title>
 </head>
 <body>
-    <h1>Edit your set</h1>
+    <div><img src="https://i.imgur.com/3fBiml3.jpg" id="bg-index"></div>
+    <h1 class="heading">Edit set</h1>
+    
+    <div class="edit-form">
+        <div class="row my-5">
+            <div class="col-lg-4">
     <form action="/lego/<%= lego.id %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%=lego.name%>"/>
-        Description: <input type="text" name="description" value="<%=lego.description %>"/>
-        Pieces: <input type="number" name="pieces" value="<%=lego.pieces %>"/>
-        Image: <input type="text" name="img" value="<%=lego.img %>"/>
-        Instructions: <input type="text" name="Instructions" value="<%=lego.instructions %>"/>
-        Value: <input type="number" name="value" value="<%=lego.value %>"/>
-        QTY: <input type="number" name="qty" value="<%=lego.qty %>"/>
+        Name: <input type="text" name="name" value="<%=lego.name%>" class="form-control"/>
+        Description: <textarea type="text" name="description" value="<%=lego.description %>" class="form-control"></textarea>
+        Pieces: <input type="number" name="pieces" value="<%=lego.pieces %>" class="form-control"/>
+        Image: <input type="text" name="img" value="<%=lego.img %>" class="form-control"/>
+        Value: <input type="number" name="value" value="<%=lego.value %>" class="form-control"/>
+        QTY: <input type="number" name="qty" value="<%=lego.qty %>" class="form-control"/>
         Is set retired: 
         <input type="checkbox" name="retired"
             <% if(lego.retired === true) { %>
@@ -19,7 +23,11 @@
             <% } %>
         />
         <br>
-        <input type="submit" name="" value="Submit Changes"/>
+        <input type="submit" class="btn btn-primary btn-lg" role="button">
     </form>
+
+    <div class="button2">
+   <a href="/" class="btn btn-danger" tabindex="-1" role="button">Return to Home page</a>
+    <a href="/lego" class="btn btn-success" tabindex="-1" role="button">Return to database</a>
 </body>
 </html>

@@ -1,6 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-
+const alert = require("alert");
 const User = require("../models/users");
 
 const router = express.Router();
@@ -15,7 +15,8 @@ router.post("/register", (req, res) => {
 
   User.findOne({ username: req.body.username }, (err, userExists) => {
     if (userExists) {
-      res.send("that user name already exist");
+      alert("that user name already exist");
+      // res.send("that user name already exist");
     } else {
       User.create(req.body, (err, createdUser) => {
         req.session.currentUser = createdUser;
@@ -40,10 +41,12 @@ router.post("/signin", (req, res) => {
         req.session.currentUser = foundUser;
         res.redirect("/lego");
       } else {
-        res.send("invalid username or password");
+        alert("invalid username or password");
+        // res.send("invalid username or password");
       }
     } else {
-      res.send("invalid username or password");
+      alert("invalid username or password");
+      // res.send("invalid username or password");
     }
   });
 });

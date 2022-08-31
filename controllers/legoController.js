@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Lego = require("../models/Lego.js");
-
+const alert = require("alert");
 const db = require("../models");
 
 //Authentication
@@ -9,16 +9,10 @@ const authRequired = (req, res, next) => {
   if (req.session.currentUser) {
     next();
   } else {
-    res.send("You need to log in to do that");
+    alert("You need to log in to do that");
+    // res.send("You need to log in to do that");
   }
 };
-
-// router.get("/", (req, res) => {
-//   db.Lego.find().then((results) => {
-//     const context = { allLego: results };
-//     res.render("index.ejs", context);
-//   });
-// });
 
 // //INDEX
 router.get("/", async (req, res) => {
@@ -45,14 +39,6 @@ router.get("/:id", async (req, res) => {
     lego: lego,
   });
 });
-// router.get("/:id", async (req, res) => {
-//   console.log("lego");
-//   Lego.findById(req.params.id, (error, lego) => {
-//     res.render("show.ejs", {
-//       lego: lego,
-//     });
-//   });
-// });
 
 //CREATE
 router.post("/", (req, res) => {
@@ -88,7 +74,7 @@ router.get("/:id/edit", authRequired, (req, res) => {
 });
 
 //UPDATE
-router.put("/id", (req, res) => {
+router.put("/:id", (req, res) => {
   if (req.body.retired === "on") {
     req.body.retired = true;
   } else {
@@ -98,7 +84,7 @@ router.put("/id", (req, res) => {
     req.params.id,
     req.body,
     { new: true },
-    (err, updateModel) => {
+    (err, updatedModel) => {
       res.redirect("/lego");
     }
   );

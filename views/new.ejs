@@ -1,48 +1,51 @@
 <%-include("./partials/header.ejs")%>
-    <title>New Page</title>
-</head>
-<body>
-    <h1> This is the new page(lego "new" page)</h1>
+<div><img src="https://i.imgur.com/3fBiml3.jpg" id="bg-new"></div>
+    <h1 class="heading">Add your set</h1>
     
-
+<div class="new-form">
+    <!-- <div class="row my-lg-5"> -->
+        <div class="col-lg-12">
+            
     <form method="POST" action="/lego">
-      <fieldset>
-        <label for="name">Name:</label>
-        <input id="name" type="text" name="name" placeholder="Enter name">
-      </fieldset>
-      <fieldset>
-        <label for="description">Description:</label>
-        <textarea id="description" type="text" name="description" placeholder="Enter description">
+
+            <label for="name" class="form-label">Name:</label>
+            <input  type="text" name="name" placeholder="Enter name of set" class="form-control">
+       
+
+            <label for="description">Description:</label>
+            <textarea id="description" type="text" name="description" placeholder="Enter a short description" class="form-control">
         </textarea>
-    </fieldset>
-        <fieldset>
-            <label for="pieces">Pieces?</label>
-            <input id="pieces" type="number" name="pieces" placeholder="How many pieces?">        
-        </fieldset>
-        <fieldset>
-            <label for="img">Image:</label>
-            <input id="image" type="string" name="img" placeholder="insert image URL">        
-        </fieldset>
-        <fieldset>
-            <label for="instructions">Instructions:</label>
-            <input id="instructions" type="string" name="instructions" placeholder="insert instructions URL">        
-        </fieldset>
-        <fieldset>
-            <label for="value">Value:</label>
-            <input id="value" type="number" name="value" placeholder="enter value">        
-        </fieldset>
-        <fieldset>
-            <label for="qty">Quantity:</label>
-            <input id="qty" type="number" name="qty" placeholder="enter qty">        
-        </fieldset>
-    <fieldset>
-        <label for="retired">Retired set?</label>
+      
+            <label for="pieces" class="pieces-label">Pieces qty?</label>
+            <input id="pieces" type="number" name="pieces" placeholder="How many pieces?" class="form-control">  
+        
+            <label for="img" class="image-label">Image:</label>
+            <input id="image" type="string" name="img" placeholder="insert image URL" class="form-control">           
+      
+            <label for="value" class="value-label">Value:</label>
+            <input id="value" type="number" name="value" placeholder="enter value" class="form-control">        
+        
+            <label for="qty" class="quantity-label">Quantity:</label>
+            <input id="qty" type="number" name="qty" placeholder="enter qty" class="form-control">        
+ 
+        <label for="retired" class="retired-label">Retired set?</label>
         <input id="retired" type="checkbox" name="retired">
-      </fieldset>
-      <button>Add new Lego set</button>
+      <br/>
+
+      <div class="btn-responsive2">
+      <input type="submit" class="btn btn-primary btn-lg" role="button">
+
+      </div>
+      
     </form>
-    <a href="/">return to Home page</a>
-    <a href="/lego">Return to database</a>
+</div>
+
+</div>
+</div>
+<div class="button2">
+   <a href="/" class="btn btn-danger" tabindex="-1" role="button">Return to Home page</a>
+    <a href="/lego" class="btn btn-success" tabindex="-1" role="button">Return to database</a>
+</div>
 </body>
 </html> 
 </body>

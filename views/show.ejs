@@ -1,13 +1,38 @@
 <%-include("./partials/header.ejs")%>
-    <title>Document</title>
-</head>
-<body><h1>This is the show page</h1>
+<img src="https://i.imgur.com/0YfEaWP.jpg" id="bg-index">
+    <div class="show-item">
+        
+                <h1 class="show-name"><%=lego.name%></h1>
+                
+        <table cellspacing="10">
+            <tr>
+                <td>
+            <img src="<%=lego.img%>" class="image2">
+    </td>
+    <td>
+            <div class="info">
+           <h5>Description: </h5> <p><br/><%=lego.description%></p>
+           </div>
+           <ul class="info2">
+            <h5>Pieces: <%=lego.pieces%></h5>
+            <h5>Price: $<%=lego.value%></h5>
+            <h5>Quantity: <%=lego.qty%></h5>
+            <h5>Retired? <%=lego.retired%></h5>
+        </ul>
+        </td>
+        </tr>
+    
+        </table>
+       
+    </div>  
+        
+    <!-- lower buttons -->
+    <div class="button4">
+    <div class="btn-group" role="group">
+    <a href="/lego/<%=lego.id%>/edit" class="btn btn-secondary btn-lg" tabindex="-1" role="button">EDIT</a>
+    <a href="/lego" class="btn btn-dark btn-lg" tabindex="-1" role="button">BACK<a>
+    </div>
+    </div>
 
-    <%=lego.name%>
-    <h2><%=lego.description%></h2>
-    <h2><%=lego.pieces%></h2>
-    <h2><img src="<%=lego.img%>"></h2>
-    <a href="/lego/<%=lego.id%>/edit">
-        <button>EDIT</button></a>
-
-        <a href="/lego">index</a>
+           <!-- footer -->
+           <%- include('./partials/footer.ejs') %>-

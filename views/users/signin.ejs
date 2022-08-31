@@ -1,22 +1,23 @@
 <%- include('../partials/header.ejs') %>
 
+<div class="container">
+<div><img src="https://i.imgur.com/5MGamyj.jpg" id="bg-image">
 
-<div><img src="https://i.imgur.com/5MGamyj.jpg" id="bg-image"></div>
-    <h1>Sign In</h1>
-    <div class="row my-5">
-      <div class="col-lg-4">
+    
+    <div class="forms">
+      <h1>Sign In</h1>
+      <div class="col-lg-12">
     <form action="/users/signin" method="POST">
-      <fieldset>
-        <label for="username">Username:</label>
-        <input type="text" name="username">
-      </fieldset>
-      <fieldset>
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-      </fieldset>
-      <input type="submit" value="Sign In">
+        <label for="username" class="username-label">Username:</label>
+        <input type="text" name="username" placeholder="enter username" class="form-control"/>
+  
+        <label for="password" class="password-label">Password:</label>
+        <input type="password" name="password" placeholder="enter password" class="form-control"/>
+      <br/>
+      <input type="submit" value="Sign In" class="form-control">
     </form>
     </div>
   </div>
-  </body>
-</html>
+  </div>
+  </div>
+  <%- include('../partials/footer.ejs') %>

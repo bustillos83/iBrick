@@ -7,7 +7,6 @@ const legoSchema = new Schema({
   description: { type: String, require: true },
   pieces: Number,
   img: String,
-  instructions: String,
   value: Number,
   qty: { type: Number, max: 99 },
   retired: Boolean,
