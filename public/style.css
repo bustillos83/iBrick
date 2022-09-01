@@ -278,3 +278,14 @@ inline-size: 350px;
 
     
 }
+
+.contact2{
+    position: absolute;
+    margin-left: -150px;
+    margin-top: -650px;
+}
+.contact-form{
+    position: absolute;
+    margin-top: -600px;
+    margin-left: -100px;
+} 
